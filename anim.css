@@ -1,0 +1,51 @@
+
+.stuck.anim{
+	animation: cycle_show 1.5s steps(60); 
+	
+  animation-fill-mode: forwards;
+}
+.anim{
+	animation: cycle_hide 1s steps(60); 
+  	animation-fill-mode: forwards;
+}
+/*.featured-pod.visible + .anim-container .anim{
+	
+	animation: cycle_hide 1.5s steps(60); 
+  	animation-fill-mode: forwards;
+}*/
+
+
+.anim {
+  height: 360px;
+  width: 375px;
+  margin: 0px auto;
+}
+
+@keyframes cycle_show {  
+  0% {background-position: 0 0; } 
+  100% {background-position: 100% 0; } /* Must be full height of sprite or skipping will happen.*/
+}
+@keyframes cycle_hide {  
+  0% {background-position: 100% 0; } 
+  100% {background-position: 0 0; } /* Must be full height of sprite or skipping will happen.*/
+}
+.scroll-trigger{
+	background: red;
+	position: absolute;
+	width: 500px;
+	height: 600px;
+	z-index: 0;
+	opacity: 0.5;
+	top: 0vh;
+	left: 0;
+}
+.scroll-trigger.stuck{
+	background: yellow;
+}
+.foreground-image-anim{
+	height: auto !important;
+	position: relative;
+}
+.wrapper{
+	overflow: hidden;
+}
